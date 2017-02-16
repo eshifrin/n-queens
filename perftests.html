@@ -1,37 +1,48 @@
+<!DOCTYPE HTML>
 <html>
-<body>
-<div id="mydiv"></div> 
-<script src="lib/benchmark.js"></script>
-<script src="lib/lodash.js"></script>
+<head>
+  
+
+
 <script src="lib/jquery-1.8.3.js"></script>
-<script src="lib/underscore.js"></script>
+<!-- <script src="lib/underscore.js"></script> -->
+<script src="lib/lodash.js"></script>
+<!-- <script src="lib/platform.js"></script> -->
+<script src="lib/benchmark.js"></script>
 <script src="lib/backbone.js"></script>
 <script src="src/Board.js"></script>
 <script src="src/solvers.js"></script>
-<a href="#" onclick="bench.run({async: true}); return false;">run test</a>
-
-
 <script>
- 
-var bench = new Benchmark('insertNode',
+// console.log(Benchmark)
+var bench = new Benchmark('countNQueens',
  
 // The function to test
 function() {
-  for (var i = 0; i < 10; i++){
+  for (var i = 0; i < 10; i++) {
     countNQueensSolutions(i);
   }
-},
+}
  
 // Additional options for the test
-{
-  'setup': function() {
-    var mydiv = document.getElementById('mydiv');
-  },
-  'teardown': function() {
-    mydiv.innerHTML = '';
-  }
-});
+// {
+//   'setup': function() {
+//     var mydiv = document.getElementById('mydiv');
+//   },
+//   'teardown': function() {
+//     mydiv.innerHTML = '';
+//   }
+// }
+);
 </script>
+</head>
+
+<body>
+<div id="mydiv"></div> 
+<!-- <a href="#" onclick="bench.run({async: true}); return false;">run test</a> -->
+
+
+
+
  
 </body>
 </html>
